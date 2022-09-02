@@ -14,7 +14,7 @@ namespace Homework3
     //данных, реализуйте доступ к отдельным полям через
     //методы класса.
 
-    enum 
+    
 
     class Products
     {
@@ -146,7 +146,30 @@ namespace Homework3
 
         }
 
-        
+        void SellPod(string name, int quantity)
+        {
+
+            for(int i = 0; i < products.Length; i++)
+            {
+                if (products[i].Name == name)
+                {
+                    if(products[i].Quantity >= quantity)
+                    {
+                        products[i].Quantity -= quantity;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Не хватает товара");
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Продукт не найден");
+                }
+            }
+
+        }
 
         void AddProduct(string name)
         {
@@ -272,7 +295,34 @@ namespace Homework3
             //    Console.Write(i + " ");
             //}
 
-            
+            Console.WriteLine("Введите название магазина");
+            string name = Console.ReadLine();
+            Console.WriteLine("Введите адрес магазина");
+            string adres = Console.ReadLine();
+            Market market = new Market(name, adres);
+
+            bool end = true;
+
+            while (end)
+            {
+
+                Console.WriteLine("1 - работа с профилем, 2 - работа с магазином, 3 - конец работы");
+                int res = Convert.ToInt32(Console.ReadLine());
+                if(res == 1)
+                {
+                    Console.WriteLine("1 - вывести профиль, 2 - отредактировать профиль");
+                    res = Convert.ToInt32(Console.ReadLine());
+                    if(res == 1)
+                    {
+
+                    }
+                }
+
+
+
+
+
+            }
 
 
         }
